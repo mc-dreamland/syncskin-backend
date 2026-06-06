@@ -1,0 +1,58 @@
+WEBSOCKET ws://localhost:8081/geyser
+Content-Type: application/json // used only for IDE highlighting.
+// Highlighting is applied for each message independently.
+
+
+{
+  "skin_data": "H4sIAAAAAAAA/+2bPU412THXS+sRMUJuAUSVa5AxREosmVugYS0EkXabLcNHIASUkX0ywnS0KRKMeyL4pHHsd+z5z17vvyX/hpnMrH9sz3+GE+UIlVh3m1eUNPRB8mXvtputxXmhGnn4kfTHzt/RWjs/Dd//1WYx85PpS8QPyt9nP959Pzz+Rx16vS5kb/+vj3npJ+BH8tDyrhz+ZAHEPRnHj6Kvz4HcYAift81f4XwR9viH4yHxH8c10S9XC4PDrxeCcUT7B9X+5odwpvNRpRdz2eQvCvjqIzPsfFE1zHo7nFfj+sQNtsYpz3AHM2Tb5PPp8a1djzU3PA4PzwxNaYhY1207z+rugws9jaq44E4IW7KUuxty8BRF1wF1TuyPmjkzxaVOJXeYrFAHRN/jvUGh18z9Zn/9eHXRQp+YIH1D9gsg77xOzQ1ftY46bvPoS/U/BAO6Yt0nxzTfwk8/zhwPF2/i/Kv1+t6TIBwn/l98wAu/2q1qsMUs8+56h+ubdMGXDxwPPs/Rzb5KR5p7lh+qfo3GTQ/lAXV7u32L1UGXfDro+bH6tU8Z1+Ts/1L8ZvW/F26C36433X/p8O+PtDV3iXvgS75bQ+F35iLJecPyD/XqFxzUJ02NVe11zYp+F17Kk2333+azWZfVPrUfiP3eQHleP7meYz95+VHyP1RVFRUVFRUFKjjfhlbCee92cQpizHwc1T4h8fvW/93maeckuTve/1j69+Q5z+B638t8zP1nVIB63+uMvAXDUuN50+c/fOE/ydIqUnxp3p/YCj8Dk2NP9n+0UDGB5IR21eeAr9S/ncMxs4Pde9jVwL8PSi3Tu//wl/4p8wvyNFWpf4tx7w/IGQ7L3bY9Z2yvm8l7vsDu7c/TZ/saeN7/dz8c0W9H0D5lN+1n5/u/7XfhPslXQBAAAA=",
+  "geometry_data": "H4sIAAAAAAAA/+2XS4/aMBDHv0vOIcoLmnLrsVIPlfaIVsgkE/A2iZHtsN0ivnvHQNg8nGDIqlRVhUCJ7Zn5+T9+DHsrZTwncrkDLigrrLnlOZ7vuJZt5bSAmJNUztfAcpD8zZov9taKFSCOTwXJAQ1WLHnD4VvCoZD4/kqokKqB7hi+L1zHtf0Qf/Dh+WBf7HTjVOjLuLhcnSMxTtcU4RaTKfZH+A1wjG0J+gs9LTw0nNkeNpQ75chGe3w5x4nJFup8FW8b7+SSM0nkUYkTUORWRNiZgIg53Z769xZN0CNNKXB0W4nknONJ+ClLDssN0PUGAwX+e9srTeTGms/Cg5pnR1HOWFsY94ouYSXexK8rE2GjHVbCKJFmdWlGp64y1BBfTWVYOVdPdWT89KRyAyQxSWUL12gFHPPfZKVFmhGJHlxn6to3omO+m+ykoVg1lT50jWI9OQ4bOcawYVSPm0Eqv/B8YP5qT/n6bNUU8BsSGLGEkYblKQPYNdJRI+wjqtl/lZAPW88Um3LhDay+yGgCbmvDcLWXh9Wc3COnMU7gd3C6gtYpe6kyFhPJuFAHWYaLcblhWaJG4iExxcP00IzSll0X42Kpl9x1vNNBNjRHPKO6a+YbrAdOG8/53Hvc9CtuRONqYL6TQor2CjwTGhC9EwRq1HUCzQoc1mNynyCGOJoV2FGkDjkOyvRea1K9kPgHSOObwvRm35Q5KRhNnLgUkuWaS34Wai5529pRQVcZLFesLBJxGe13eliaCpCntNtqvq3+s0/vrrrhoy/vP1BvPKhu+GtLgP9nxvh7JaecM9zXKckE/PvXzHGnemr1NgmCDykbj45vrRuv0owrHBtMt1WOthcq4/4a5pMZ/9114616mgONqxwbXEOl40W/e6pHrfgPLg5u/Rs5CUaUFE8ZfWxZ8Xz4DYJSQicTEgAA",
+  "geometry_name": "ewogICAiZ2VvbWV0cnkiIDogewogICAgICAiZGVmYXVsdCIgOiAiZ2VvbWV0cnkuaHVtYW5vaWQuY3VzdG9tIgogICB9Cn0K",
+  "skin_id": "c18e65aa-7b21-4637-9b63-8ad63622ef01.Custom493dc5f7e0004e17b2645ad66f9b35c6",
+  "uuid": "00000000-0000-4000-8000-000044c00123",
+  "xuid": "44c00e5f",
+  "hash": "c8acf758888f9f0359fc4fd162d7210e"
+}
+=== wait-for-server
+{
+  "message": "Wait for the server message and send the current message as response"
+}
+===
+{
+  "message": "Send after previous message without waiting for the server message"
+}
+
+###
+### 测试环境
+POST https://g79mclexpr1.nie.netease.com/pe/web/skin-md5-valid-inner
+Content-Type: application/json
+
+{
+  "sign": "62bd6025d29b17ff",
+  "md5_list": [
+    "f1e31ca4adf0727d12b5080929d32e70"
+  ]
+}
+
+### 正式环境
+POST https://g79mclobt.nie.netease.com/pe/web/skin-md5-valid-inner
+Content-Type: application/json
+
+{
+  "sign": "62bd6025d29b17ff",
+  "md5_list": [
+    "c8acf758888f9f0359fc4fd162d7210e"
+  ]
+}
+
+### check
+POST http://localhost:8081/check
+Content-Type: application/json
+
+{
+  "md5_list": [
+    "c8acf758888f9f0359fc4fd162d7210e"
+  ]
+}
+
+### skin
+GET http://localhost:8081/skin/00000000-0000-4000-8000-000044c00123
