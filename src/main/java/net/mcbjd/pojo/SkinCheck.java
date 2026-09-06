@@ -34,9 +34,9 @@ public class SkinCheck implements Serializable {
     @Data
     @ToString
     public static class SkinCheckModel {
-        private int code;
+        private Integer code;
         private String message;
         private String details;
-        private boolean[] entities;
+        private Boolean[] entities;
     }
 }

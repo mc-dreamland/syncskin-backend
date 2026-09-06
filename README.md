@@ -111,22 +111,15 @@ Content-Type: application/json
 }
 ```
 
-### 校验皮肤哈希
+### 皮肤校验
 
-```http
-POST /check
-Content-Type: application/json
-```
+Geyser 上传的 `skin_data` 格式为 `Base64(Gzip(ImageBytes))`。后端先解码、解压，再计算文档要求的 `MD5(Base64(ImageBytes))`；上传的 `hash` 不作为合法性依据，因此兼容现有 Geyser 的旧哈希算法。
 
-请求体示例：
+仅当网易 HTTP 状态为 200、`code` 为 0、单个校验结果为 `true` 时才接受普通皮肤。通过结果单独缓存，拒绝、异常和查询未命中均不会产生合法标记。同一玩家的新上传或自定义皮肤更新会使旧请求失效；校验失败时保留上一份已接受的皮肤。
 
-```json
-{
-  "md5_list": [
-    "示例MD5"
-  ]
-}
-```
+`skin_id` 以 `.NonsyncCustom` / `.NonsyncCustomSlim` 结尾，或明确携带 `persona_skin: true` 时按文档豁免。旧版 Geyser 不上传 Persona 标志时，后端无法仅凭图片恢复这个标志。`PUT /skin/{uuid}` 保留自定义皮肤更新用途，并同步重新计算哈希。
+
+这些修复仅作用于后端。Geyser 原有的确认包时序、皮肤刷新和本地缓存行为不变；后端不新增 `/check` 接口或 WebSocket 事件。
 
 ### WebSocket
 
@@ -145,7 +138,7 @@ WebSocket 用于接收和广播皮肤同步事件，具体事件结构以服务�
 ./gradlew test
 ```
 
-当前构建脚本中配置了测试排除规则，如需启用测试，请先检查 `build.gradle` 中的 `test` 配置。
+默认运行无需外部服务的皮肤校验回归测试。历史集成示例会访问外部接口或数据库，需显式使用 `-PlegacyIntegrationTests` 启用。
 
 ## 开源前注意事项
 

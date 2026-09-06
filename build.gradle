@@ -25,8 +25,10 @@ dependencies {
     implementation("io.quarkus:quarkus-reactive-mysql-client")
 
     implementation("io.quarkus:quarkus-rest-client-reactive-jackson")
+    implementation 'com.github.ben-manes.caffeine:caffeine:3.1.8'
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
+    testImplementation 'org.mockito:mockito-core:4.11.0'
 
     implementation("io.quarkus:quarkus-cache")
 
@@ -51,7 +53,11 @@ compileJava {
 }
 
 test{
-    exclude("*/*")
+    useJUnitPlatform()
+    // Legacy examples contact external services; opt in with -PlegacyIntegrationTests.
+    if (!project.hasProperty('legacyIntegrationTests')) {
+        include "**/SkinValidationTest.class"
+    }
 }
 
 compileTestJava {

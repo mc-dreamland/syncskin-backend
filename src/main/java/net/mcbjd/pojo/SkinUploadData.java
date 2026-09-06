@@ -45,6 +45,8 @@ public class SkinUploadData {
     @JsonProperty("uid")
     private long uid;
     private String hash;
+    @JsonProperty("persona_skin")
+    private boolean personaSkin;
     @JsonIgnore
     private boolean custom;
 
